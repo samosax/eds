@@ -1,0 +1,61 @@
+org 100h
+include 'emu8086.inc'
+
+
+
+MOV DX,100h
+MOV DI,2000h
+print 'enter string with $ at end:'
+call get_string
+cld
+;lea SI,array
+MOV SI,DI  
+MOV AX,0 ;COUNT
+MOV BX,0 ;INDEX
+loop_start:
+    cmp [DI],'$'
+    jz end
+    cmp [DI],'e'
+    jz count
+    inc DI
+    jmp loop_start
+count:
+    inc ax
+    inc DI
+    jmp loop_start
+   
+end:
+printn
+print 'no of occurences:'
+call print_num
+define_print_num
+define_print_num_uns
+define_get_string
+array db 'Hello$'
+ret
+
+org 100h
+include 'emu8086.inc'
+print 'enter the string: '
+mov dx, 100;
+mov di, 1000h;            
+call GET_STRING;  
+MOV CX, 0;
+MOV DI, 1000H;
+START:
+   CMP [DI], '$';
+   JE CONCAT;
+   INC DI;
+   JMP START;
+CONCAT:
+    print 'enter the next string: '
+    call GET_STRING;
+mov si, 1000h;
+PRINT 'THE NUMBER OF CHARACTERS:'
+CALL PRINT_STRING;
+DEFINE_PRINT_NUM;  
+DEFINE_PRINT_NUM_UNS;
+DEFINE_GET_STRING;
+DEFINE_PRINT_STRING;
+
+Ret
