@@ -1,0 +1,27 @@
+print &#39;enter the number:&#39;
+
+mov ah,0h
+int 16h
+
+printn
+
+mov cl,al
+
+print &#39;enter the number&#39;
+
+mov ah,0h
+int 16h
+printn
+
+sub al,cl
+cmp al,1
+je one
+print &#39;not a sequence&#39;
+printn
+jmp endloop
+
+one:
+
+print &#39;sequence&#39;
+
+endloop:
