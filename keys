@@ -1,0 +1,20 @@
+org 100h
+
+start:
+mov ah,00
+int 16h
+
+cmp ah,01
+je exit
+key:
+mov ah,09h
+lea dx,msg1
+int 21h
+jmp start
+
+exit:
+mov ah,00
+int 21h
+msg1 db &#39;KEY$&#39;
+
+ret
