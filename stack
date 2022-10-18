@@ -1,0 +1,30 @@
+include 'emu8086.inc'
+
+org 100h 
+
+print 'Enter the number:'
+
+call scan_num
+
+;mov bx,cx
+;
+;PUSH bX
+;call square
+;pop bx
+;
+;call print_num
+;ret
+;define_print_num
+;define_print_num_uns
+;define_scan_num
+;
+;square proc
+;    mov bp,sp
+;    add bp,2
+;    mov ax,[bp]
+;    mul ax
+;    ret
+;    square endp 
+;
+
+mov ax,cx
