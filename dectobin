@@ -1,0 +1,104 @@
+01
+
+include
+
+02
+
+"enu8886. inc'
+
+03
+
+org 188h
+
+04
+
+B5
+
+scall scan_num
+
+06
+
+02
+
+now si,1008h
+
+88
+
+nOU cx,1
+
+B9
+
+10 loop_strt:
+
+11
+
+nov ax,55
+
+12
+
+nou b1,2
+
+13
+
+div bl
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+nov [sil,ah inc si inc cy
+
+спр cx,8
+
+ie exit jmp loop_strt
+
+21
+
+22
+
+pet
+
+23
+
+define_scan_nun
+
+24
+
+define_print_nun
+
+25
+
+define_print_nun_uns
+
+26
+
+27
+
+nOU
+
+Cx,8
+
+28
+
+exit:
+
+Mov si,1009h
+
+Mov ax,[si]
+
+call print_nun
+
+inc si
+
+
+loop exit
